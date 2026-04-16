@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal of Transdisciplinary Research (JTR) | Wachemo University</title>
+  <meta name="description" content="Official page of the Journal of Transdisciplinary Research (JTR), a biannual, open-access, peer-reviewed journal published by Wachemo University." />
+  <meta name="theme-color" content="#980428" />
+  <link rel="icon" href="wcu-logo2.png" />
+  <style>
+    :root{
+      --primary:#980428;
+      --primary-dark:#67001b;
+      --accent:#0f8a6f;
+      --accent-soft:#ebfaf6;
+      --gold:#c99a2e;
+      --ink:#0f172a;
+      --muted:#5b6470;
+      --line:#e5e7eb;
+      --bg:#f7f8fb;
+      --card:#ffffff;
+      --shadow:0 18px 50px rgba(15,23,42,.08);
+      --shadow-strong:0 28px 70px rgba(15,23,42,.14);
+      --radius:28px;
+      --radius-sm:18px;
+      --max:1260px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(var(--max), calc(100% - 36px));margin:0 auto}
+
+    .topbar{
+      background:#101828;
+      color:#fff;
+      font-size:13px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar .wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:10px 0;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(229,231,235,.9);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:15px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+    .brand img{
+      width:58px;
+      height:58px;
+      object-fit:contain;
+      border-radius:18px;
+      background:#fff;
+      padding:4px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+    .brand-copy{min-width:0}
+    .eyebrow{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      font-weight:800;
+      color:var(--primary);
+      margin-bottom:4px;
+    }
+    .brand-copy .title{
+      font-size:21px;
+      font-weight:900;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+    .brand-copy .sub{
+      margin-top:3px;
+      font-size:13px;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .menu a{
+      font-size:14px;
+      font-weight:800;
+      color:#334155;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:999px;
+      padding:14px 22px;
+      font-size:15px;
+      font-weight:900;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      border:none;
+      cursor:pointer;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:#fff;
+      box-shadow:0 16px 34px rgba(152,4,40,.25);
+    }
+    .btn.secondary{
+      background:#fff;
+      color:var(--primary);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .btn.ghost{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.24);
+    }
+
+    .hero{
+      background:
+        radial-gradient(circle at top right, rgba(15,138,111,.22), transparent 26%),
+        radial-gradient(circle at left center, rgba(255,255,255,.12), transparent 32%),
+        linear-gradient(135deg,#4f0015 0%, var(--primary) 46%, #7d0321 100%);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      right:-120px;
+      top:-70px;
+      width:460px;
+      height:460px;
+      border-radius:50%;
+      background:rgba(255,255,255,.08);
+      filter:blur(4px);
+    }
+    .hero-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:34px;
+      align-items:center;
+      padding:74px 0 70px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,.11);
+      border:1px solid rgba(255,255,255,.16);
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+    .hero h1{
+      margin:0;
+      font-size:58px;
+      line-height:1.03;
+      letter-spacing:-.04em;
+      max-width:900px;
+    }
+    .hero p{
+      margin:18px 0 0;
+      max-width:760px;
+      font-size:19px;
+      color:rgba(255,255,255,.91);
+    }
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+    .hero-note{
+      margin-top:16px;
+      font-size:14px;
+      color:rgba(255,255,255,.83);
+      font-weight:700;
+    }
+    .hero-strip{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .hero-strip .tile{
+      padding:16px;
+      border-radius:20px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+    }
+    .hero-strip strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .hero-strip span{
+      font-size:14px;
+      color:rgba(255,255,255,.87);
+      font-weight:700;
+    }
+
+    .issue-card{
+      background:rgba(255,255,255,.98);
+      color:var(--ink);
+      border-radius:34px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow:var(--shadow-strong);
+    }
+    .issue-cover{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+    .issue-cover img{
+      width:100%;
+      height:430px;
+      object-fit:cover;
+      object-position:top center;
+    }
+    .issue-body{padding:24px}
+    .issue-title{
+      margin:0;
+      font-size:30px;
+      line-height:1.08;
+      font-weight:900;
+      letter-spacing:-.02em;
+    }
+    .issue-sub{
+      margin-top:8px;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .meta-grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    .meta{
+      padding:14px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:#fafafa;
+    }
+    .meta .label{
+      font-size:12px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-weight:800;
+    }
+    .meta .value{
+      margin-top:6px;
+      font-size:16px;
+      font-weight:900;
+    }
+
+    section{padding:82px 0}
+    .section-head{
+      max-width:860px;
+      margin-bottom:28px;
+    }
+    .section-head h2{
+      margin:0 0 12px;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-.03em;
+    }
+    .section-head p{
+      margin:0;
+      font-size:18px;
+      color:var(--muted);
+    }
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .card h3,.card h4{
+      margin:0 0 10px;
+      line-height:1.15;
+    }
+    .card p{margin:0;color:var(--muted)}
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      margin-top:26px;
+    }
+    .stat{
+      padding:22px;
+      border-radius:20px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+    .stat .big{
+      display:block;
+      font-size:32px;
+      color:var(--primary);
+      font-weight:900;
+      line-height:1;
+      margin-bottom:8px;
+    }
+
+    .scope-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:24px;
+      align-items:start;
+    }
+    .tag-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:22px;
+    }
+    .tag{
+      padding:14px 16px;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      font-weight:800;
+    }
+    .highlight-list{
+      display:grid;
+      gap:14px;
+      margin-top:22px;
+    }
+    .highlight{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:18px;
+      border-radius:20px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .icon{
+      width:44px;
+      height:44px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-weight:900;
+      flex:0 0 auto;
+    }
+    .mini{
+      margin-top:4px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .notice{
+      margin-top:18px;
+      padding:18px 20px;
+      border-radius:20px;
+      background:#fff8eb;
+      border:1px solid #f3d28b;
+      color:#7a5812;
+      font-weight:800;
+    }
+
+    .dark{
+      background:#101828;
+      color:#fff;
+    }
+    .dark .eyebrow{color:#f7cb72}
+    .dark .section-head p{color:rgba(255,255,255,.76)}
+    .dark-card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius);
+      padding:28px;
+    }
+    .dark-card p{color:rgba(255,255,255,.76)}
+    .list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+    .list .item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:15px 16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      font-weight:800;
+    }
+    .workflow{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+    .step{
+      padding:18px;
+      border-radius:20px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .num{
+      width:38px;
+      height:38px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:#fff;
+      font-weight:900;
+      margin-bottom:12px;
+    }
+    .step h4{margin:0 0 8px;font-size:18px}
+    .step p{margin:0;color:rgba(255,255,255,.76);font-size:15px}
+
+    .policy-list,.download-list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+    .policy-list .entry,.download-list a{
+      padding:14px 16px;
+      border-radius:16px;
+      background:#fff;
+      border:1px solid var(--line);
+      font-weight:800;
+      box-shadow:var(--shadow);
+    }
+
+    .committee{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .member{
+      padding:16px 18px;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      font-weight:900;
+    }
+    .member span{
+      display:block;
+      margin-top:4px;
+      font-size:13px;
+      color:var(--muted);
+      font-weight:800;
+    }
+
+    .contact-panel{
+      background:linear-gradient(180deg,#ffffff,#f9fbff);
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+    .contact-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
+      font-size:14px;
+      font-weight:900;
+      box-shadow:var(--shadow);
+    }
+
+    .launch-box{
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.08), transparent 28%),
+        linear-gradient(135deg,var(--primary-dark),var(--primary));
+      color:#fff;
+      border-radius:36px;
+      padding:36px;
+      box-shadow:0 28px 78px rgba(152,4,40,.28);
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:24px;
+      align-items:center;
+    }
+    .launch-box h2{
+      margin:0 0 12px;
+      font-size:42px;
+      line-height:1.06;
+      letter-spacing:-.03em;
+    }
+    .launch-box p{
+      margin:0;
+      font-size:18px;
+      color:rgba(255,255,255,.86);
+    }
+    .link-panel{
+      background:#fff;
+      color:var(--ink);
+      border-radius:28px;
+      padding:24px;
+    }
+    .link-panel h3{margin:0 0 14px;font-size:24px}
+    .link-stack{display:grid;gap:12px}
+    .link-stack a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:#fafafa;
+      border:1px solid var(--line);
+      font-weight:900;
+    }
+
+    footer{
+      padding:36px 0 44px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    footer .wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      border-top:1px solid var(--line);
+      padding-top:22px;
+    }
+
+    @media (max-width:1120px){
+      .hero-grid,.scope-grid,.launch-box,.grid-2,.grid-3{grid-template-columns:1fr}
+      .stats,.workflow{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:780px){
+      .menu{display:none}
+      .hero h1{font-size:40px}
+      .section-head h2,.launch-box h2{font-size:34px}
+      .hero-actions,.contact-row{flex-direction:column}
+      .btn{width:100%}
+      .hero-strip,.tag-grid,.stats,.workflow,.committee,.meta-grid{grid-template-columns:1fr}
+      section{padding:64px 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div>Official journal page • Wachemo University</div>
+      <div>Main website: <a href="https://wcu.edu.et/Default.aspx" target="_blank" rel="noopener">https://wcu.edu.et/Default.aspx</a></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <img src="wcu-logo2.png" alt="Wachemo University logo" />
+        <img src="jtr-logo.svg" alt="Journal of Transdisciplinary Research logo" />
+        <div class="brand-copy">
+          <div class="eyebrow">Wachemo University</div>
+          <div class="title">Journal of Transdisciplinary Research (JTR)</div>
+          <div class="sub">Research • Journals & Publication</div>
+        </div>
+      </div>
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#scope">Aim & Scope</a>
+        <a href="#publishing">Publishing</a>
+        <a href="#authors">For Authors</a>
+        <a href="#governance">Governance</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="pill">Biannual • Open Access • Double-Blind Peer Review</div>
+        <h1>Journal of Transdisciplinary Research</h1>
+        <p>
+          The Journal of Transdisciplinary Research (JTR) is an academic journal established by Wachemo University
+          to serve as a platform for the dissemination of high-quality scholarly work from the global scientific
+          community. It is published biannually and operates as a non-profit international scientific journal
+          committed to academic rigor, ethical publishing standards, and open intellectual exchange.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="journal-of-transdisciplinary-research-v1i1.pdf">Current Issue</a>
+          <a class="btn secondary" href="jtr-author-guidelines.docx">Author Guidelines</a>
+          <a class="btn ghost" href="#authors">Submission Information</a>
+        </div>
+
+        <div class="hero-note">
+          The journal documentation provides for online submission. Until the live portal link is announced on this page,
+          editorial correspondence and submission enquiries may be directed to <strong>jtr.submission@wcu.edu.et</strong>.
+        </div>
+
+        <div class="hero-strip">
+          <div class="tile">
+            <strong>Publisher</strong>
+            <span>Wachemo University</span>
+          </div>
+          <div class="tile">
+            <strong>Current Issue</strong>
+            <span>Volume 1 • Issue 1</span>
+          </div>
+          <div class="tile">
+            <strong>Purpose</strong>
+            <span>Research dissemination, academic excellence, and societal relevance</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="issue-card" aria-label="Current issue">
+        <div class="issue-cover">
+          <img src="jtr-cover-page3.png" alt="Cover of Journal of Transdisciplinary Research, Volume 1 Issue 1" />
+        </div>
+        <div class="issue-body">
+          <div class="eyebrow">Current issue</div>
+          <h2 class="issue-title">Volume 1 • Issue 1</h2>
+          <div class="issue-sub">Publisher: Wachemo University</div>
+
+          <div class="meta-grid">
+            <div class="meta">
+              <div class="label">Publication model</div>
+              <div class="value">Open access</div>
+            </div>
+            <div class="meta">
+              <div class="label">Frequency</div>
+              <div class="value">Biannual</div>
+            </div>
+            <div class="meta">
+              <div class="label">Review process</div>
+              <div class="value">Double-blind</div>
+            </div>
+            <div class="meta">
+              <div class="label">Language</div>
+              <div class="value">English</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">About the Journal</div>
+        <h2>A university journal established to strengthen research dissemination, scholarly exchange, and institutional visibility.</h2>
+        <p>
+          The establishment of JTR reflects Wachemo University’s commitment to research, innovation, and academic excellence.
+          The journal is intended to increase the visibility of faculty, staff, and student research, support a stronger culture
+          of publication, and contribute to national and international scholarly dialogue.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Why the journal was established</h3>
+          <p>
+            Wachemo University has expanded teaching, postgraduate education, and research activity, yet the absence of a home-grown
+            peer-reviewed journal has limited the visibility and accessibility of the university’s research outputs. JTR was conceived
+            to address that gap and provide a credible publication platform for staff, students, and collaborators.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>What the journal aims to advance</h3>
+          <p>
+            JTR seeks to foster dialogue, knowledge integration, and innovation across disciplines in order to address complex
+            societal, environmental, and scientific challenges. It is designed to contribute to sustainable development,
+            societal well-being, and the advancement of global knowledge.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>What it contributes to the university</h3>
+          <p>
+            The journal is intended to strengthen institutional reputation, support academic staff in publication and promotion,
+            increase student research dissemination, build partnerships, and improve the university’s contribution to evidence-based
+            policy and practice.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="big">2</span>
+          Regular issues per year
+        </div>
+        <div class="stat">
+          <span class="big">28–42</span>
+          Days to first decision
+        </div>
+        <div class="stat">
+          <span class="big">≤ 90</span>
+          Maximum submission to publication
+        </div>
+        <div class="stat">
+          <span class="big">~50%</span>
+          Approximate acceptance rate
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scope">
+    <div class="wrap scope-grid">
+      <div>
+        <div class="section-head">
+          <div class="eyebrow">Aim and Scope</div>
+          <h2>Transdisciplinary in outlook, broad in coverage, and aligned with Wachemo University research priorities.</h2>
+          <p>
+            JTR publishes peer-reviewed articles that advance knowledge across a wide range of disciplines. It welcomes original
+            scientific contributions from all fields, especially work that demonstrates innovation, integration of knowledge,
+            and clear societal relevance.
+          </p>
+        </div>
+
+        <div class="tag-grid">
+          <div class="tag">Sciences</div>
+          <div class="tag">Technology</div>
+          <div class="tag">Arts, Language, and Literature</div>
+          <div class="tag">Social Sciences</div>
+          <div class="tag">Agriculture, Food, and Nutrition</div>
+          <div class="tag">Natural Resources and Environmental Studies</div>
+          <div class="tag">Medical and Health Sciences</div>
+          <div class="tag">Business and Economics</div>
+          <div class="tag">Law and Governance</div>
+          <div class="tag">Interdisciplinary and Methodological Approaches</div>
+        </div>
+
+        <div class="card" style="margin-top:22px;">
+          <h3>Objectives of JTR</h3>
+          <p>
+            The journal is intended to provide a credible platform for original and innovative scientific findings; encourage
+            interdisciplinary and integrative approaches; promote the visibility of Wachemo University research; support Ethiopia’s
+            and Africa’s development priorities; recognize indigenous knowledge systems when integrated with contemporary science;
+            strengthen academic excellence; facilitate collaboration; and contribute to the development of early-career researchers
+            and postgraduate students.
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-panel">
+        <div class="eyebrow">Special focus areas</div>
+        <h3 style="font-size:30px;margin:0 0 10px;">Priority themes for special attention</h3>
+
+        <div class="highlight-list">
+          <div class="highlight">
+            <div class="icon">01</div>
+            <div>
+              <strong>Agro-processing</strong>
+              <div class="mini">Research aligned with agriculture, food systems, production, and value-added innovation.</div>
+            </div>
+          </div>
+          <div class="highlight">
+            <div class="icon">02</div>
+            <div>
+              <strong>Medical tourism</strong>
+              <div class="mini">Work connected to health systems, service development, clinical capacity, and institutional growth.</div>
+            </div>
+          </div>
+          <div class="highlight">
+            <div class="icon">03</div>
+            <div>
+              <strong>Renewable energy</strong>
+              <div class="mini">Research on sustainable energy systems, technical solutions, and applied innovation.</div>
+            </div>
+          </div>
+          <div class="highlight">
+            <div class="icon">04</div>
+            <div>
+              <strong>Integrated community development</strong>
+              <div class="mini">Scholarship that connects research, policy, institutions, and community transformation.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="notice">
+          In addition to these focus areas, JTR actively welcomes studies that integrate indigenous knowledge systems with modern
+          science to provide context-sensitive local and global solutions.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark" id="publishing">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Publishing Framework</div>
+        <h2>Designed for strong editorial management, responsible peer review, and timely publication.</h2>
+        <p>
+          JTR is structured to combine academic quality, editorial fairness, and an efficient publication pathway from submission
+          to online release.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="dark-card">
+          <h3 style="font-size:28px;margin-top:0;">Article Types and Length</h3>
+          <div class="list">
+            <div class="item"><span>Original research articles</span><span>≤ 7,000 words</span></div>
+            <div class="item"><span>Review articles</span><span>≤ 10,000 words</span></div>
+            <div class="item"><span>Short communications</span><span>≤ 3,000 words</span></div>
+            <div class="item"><span>Conference proceedings</span><span>Within scope</span></div>
+          </div>
+          <p style="margin-top:18px;">
+            The journal also expects manuscripts to be original, ethically compliant, clearly written,
+            and prepared in a format consistent with its submission requirements.
+          </p>
+        </div>
+
+        <div class="dark-card">
+          <h3 style="font-size:28px;margin-top:0;">Editorial Workflow</h3>
+          <div class="workflow">
+            <div class="step">
+              <div class="num">1</div>
+              <h4>Submission</h4>
+              <p>Manuscripts are submitted for editorial consideration together with the required supporting materials.</p>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <h4>Initial Editorial Assessment</h4>
+              <p>Scope, formatting, originality, and ethical compliance are checked before peer review.</p>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <h4>Double-Blind Review</h4>
+              <p>Each manuscript is evaluated by at least two independent experts in the relevant field.</p>
+            </div>
+            <div class="step">
+              <div class="num">4</div>
+              <h4>Revision and Decision</h4>
+              <p>Authors respond to reviewer comments through minor or major revision where required.</p>
+            </div>
+            <div class="step">
+              <div class="num">5</div>
+              <h4>Proof and Production</h4>
+              <p>Accepted articles proceed to typesetting, proofreading, and author proof review.</p>
+            </div>
+            <div class="step">
+              <div class="num">6</div>
+              <h4>Online Publication</h4>
+              <p>Accepted articles are published online first after corrected proofs are received.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="authors">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">For Authors</div>
+        <h2>Submission requirements presented clearly so authors can prepare manuscripts with confidence.</h2>
+        <p>
+          The author guidance below reflects the journal documents and is intended to make the requirements visible at a glance
+          while preserving full downloadable guidance for detailed preparation.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Pre-submission Checklist</h3>
+          <div class="policy-list">
+            <div class="entry">Cover letter uploaded separately</div>
+            <div class="entry">Summary of the study’s contribution</div>
+            <div class="entry">Relationship to previously published work</div>
+            <div class="entry">Type of article identified clearly</div>
+            <div class="entry">Supplementary information prepared where needed</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Formatting Requirements</h3>
+          <div class="policy-list">
+            <div class="entry">Microsoft Word or LaTeX manuscript</div>
+            <div class="entry">Times New Roman, 12-point font</div>
+            <div class="entry">Double-spaced throughout</div>
+            <div class="entry">Continuous line numbering</div>
+            <div class="entry">Pages numbered consecutively</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Abstract, Keywords, and Structure</h3>
+          <div class="policy-list">
+            <div class="entry">Abstract not exceeding 250 words</div>
+            <div class="entry">3–7 keywords listed alphabetically</div>
+            <div class="entry">Separate title page with affiliations and ORCID</div>
+            <div class="entry">Main text, conclusion, and references clearly structured</div>
+            <div class="entry">Required declarations included before references</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:22px;">
+        <div class="card">
+          <h3>Required Declarations</h3>
+          <p>
+            Manuscripts should include author contributions, funding statement, acknowledgments where applicable,
+            data availability statement, ethics or ethical approval statement where applicable, conflict of interest declaration,
+            acknowledgement of indigenous knowledge where relevant, and supplementary information notes where relevant.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Submission Route</h3>
+          <p>
+            The journal documentation states that submissions are to be made through the journal’s online submission system.
+            Until the live submission portal is published, this page provides the editorial contact address for submission-related
+            enquiries and coordination.
+          </p>
+          <div class="contact-row">
+            <a class="btn primary" href="mailto:jtr.submission@wcu.edu.et?subject=JTR%20Submission%20Enquiry">jtr.submission@wcu.edu.et</a>
+            <a class="btn secondary" href="jtr-author-guidelines.docx">Full Guidelines</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="governance">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Governance and Editorial Structure</div>
+        <h2>Built on formal oversight, editorial accountability, and a clear institutional structure.</h2>
+        <p>
+          The establishment document presents JTR as a journal with structured governance intended to ensure academic excellence,
+          transparency, editorial integrity, and long-term sustainability.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Institutional Oversight</h3>
+          <p>
+            The journal is to be administered under the stewardship of the Office of the Vice President for Academic Affairs,
+            Research, Technology Transfer, and Community Service. The Research and Publication Directorate is assigned direct oversight
+            of day-to-day operations, while the University Senate provides institutional support and policy endorsement.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Editorial Bodies and Roles</h3>
+          <p>
+            The journal framework includes an Advisory Board and an Editorial Board. The Editor-in-Chief holds overall responsibility
+            for academic content and editorial standards. The governance structure also identifies the Managing Editor, Associate Editors,
+            Guest Editors, Editorial Officer, Language Editor, and Secretary of the Editorial Team as key functions in journal management.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:22px;">
+        <div class="card">
+          <h3>Editorial Principles</h3>
+          <p>
+            The journal policy emphasizes editorial independence, originality, confidentiality, ethical review, qualified reviewer
+            selection, and constructive peer-review reporting. It also highlights diversity in reviewer and board composition, and
+            the importance of fair, transparent, and academically grounded editorial decisions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Indexing and Discoverability</h3>
+          <p>
+            JTR is presented as being in the process of registration and discoverability in services such as EJOL, AJOL,
+            Google Scholar, CrossRef, Dimensions, WorldCat, and Index Copernicus, with future targets that include Scopus,
+            Web of Science, and PubMed Central as the journal grows in output and reputation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="committee">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Founding Committee</div>
+        <h2>The official committee named in the journal documents is included here in full.</h2>
+        <p>
+          These are the committee members identified in the establishment and guideline documents for the research journal initiative.
+        </p>
+      </div>
+
+      <div class="committee">
+        <div class="member">Dr. Adane Woldemedhin<span>Chairman</span></div>
+        <div class="member">Dr. Markos Makiso<span>Secretary</span></div>
+        <div class="member">Dr. Alemu Ersido<span>Member</span></div>
+        <div class="member">Dr. Mulatu Chake<span>Member</span></div>
+        <div class="member">Dr. Tagesse Mathewos<span>Member</span></div>
+        <div class="member">Dr. Tola Bekene<span>Member</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="launch-box">
+        <div>
+          <div class="eyebrow" style="color:#f7cb72;">Contact and Downloads</div>
+          <h2>Journal information, key documents, and contact details in one place.</h2>
+          <p>
+            This page is intended to serve as a complete public entry point for the journal: it introduces the journal,
+            explains its mission and scope, presents its publishing framework, and provides direct access to the current issue
+            and author guidance materials.
+          </p>
+        </div>
+
+        <div class="link-panel">
+          <h3>Downloads and links</h3>
+          <div class="link-stack">
+            <a href="mailto:jtr.submission@wcu.edu.et?subject=JTR%20Submission%20Enquiry"><span>jtr.submission@wcu.edu.et</span><span>↗</span></a>
+            <a href="https://wcu.edu.et/Default.aspx" target="_blank" rel="noopener"><span>Wachemo University website</span><span>↗</span></a>
+            <a href="journal-of-transdisciplinary-research-v1i1.pdf"><span>Current issue PDF</span><span>↗</span></a>
+            <a href="jtr-author-guidelines.docx"><span>Author guidelines</span><span>↗</span></a>
+            <a href="jtr-governance-editorial-structure.docx"><span>Governance and editorial structure</span><span>↗</span></a>
+            <a href="#top"><span>Back to top</span><span>↑</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>© Wachemo University • Journal of Transdisciplinary Research (JTR)</div>
+      <div>Official journal page</div>
+    </div>
+  </footer>
+</body>
+</html>
